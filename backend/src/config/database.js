@@ -7,8 +7,8 @@ const connectDB = async () => {
     try {
         let uri = process.env.MONGODB_URI;
 
-        // If no MongoDB URI provided or placeholder is present, fall back to in-memory MongoDB for instant local evaluation
-        if (!uri || uri.includes("your_mongodb_connection_string_here") || uri.includes("<username>")) {
+        // fallback to in-memory db if uri is missing or placeholder
+        if (!uri || uri.includes("your_mongodb_connection_string_here") || uri.includes("<username>") || uri.includes("<db_username>")) {
             console.log("\n[Notice] No active MongoDB Atlas URI detected in .env.");
             console.log("[Notice] Initializing local MongoDB instance for seamless offline testing & evaluation...");
             const { MongoMemoryServer } = await import("mongodb-memory-server");

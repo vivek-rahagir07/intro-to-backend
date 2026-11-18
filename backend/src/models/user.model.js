@@ -33,13 +33,13 @@ const userSchema = new Schema(
     }
 );
 
-// Hash password before saving
+// hash password before saving
 userSchema.pre("save", async function () {
     if (!this.isModified("password")) return;
     this.password = await bcrypt.hash(this.password, 10);
 });
 
-// Compare password method
+// verify password helper
 userSchema.methods.comparePassword = async function (candidatePassword) {
     return await bcrypt.compare(candidatePassword, this.password);
 };

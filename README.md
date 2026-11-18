@@ -105,7 +105,7 @@ npm install
    - Choose **Drivers** (Node.js).
    - Copy the connection string format:
      ```text
-     mongodb+srv://<username>:<password>@cluster0.xxxx.mongodb.net/?retryWrites=true&w=majority
+     mongodb+srv://<username>:<password>@cluster0.twr96ja.mongodb.net/?retryWrites=true&w=majority
      ```
 
 ---
@@ -122,7 +122,7 @@ Edit `.env` and replace with your credentials and database name (`intro-to-backe
 
 ```env
 PORT=4000
-MONGODB_URI="mongodb+srv://<username>:<password>@cluster0.xxxx.mongodb.net/intro-to-backend?retryWrites=true&w=majority"
+MONGODB_URI="mongodb+srv://<username>:<password>@cluster0.twr96ja.mongodb.net/intro-to-backend?retryWrites=true&w=majority"
 ```
 
 > **Note on Instant Local Evaluation:**  

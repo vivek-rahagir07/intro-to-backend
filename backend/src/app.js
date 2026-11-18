@@ -1,17 +1,17 @@
 import express from "express";
 import cors from "cors";
 
-const app = express(); // create an express app
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// routes import
+// routes
 import userRouter from "./routes/user.route.js";
 import postRouter from "./routes/post.route.js";
 
-// health check / welcome route
+// health check
 app.get("/", (req, res) => {
     res.status(200).json({
         success: true,
@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
     });
 });
 
-// routes declaration
+// mount routes
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/posts", postRouter);
 

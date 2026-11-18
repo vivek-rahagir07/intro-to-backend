@@ -1,6 +1,6 @@
 import { Post } from "../models/post.model.js";
 
-// Create a post
+// create post
 const createPost = async (req, res) => {
     try {
         const { name, description, age } = req.body;
@@ -25,7 +25,7 @@ const createPost = async (req, res) => {
     }
 };
 
-// Read all posts
+// get all posts
 const getPosts = async (req, res) => {
     try {
         const posts = await Post.find();
@@ -38,7 +38,7 @@ const getPosts = async (req, res) => {
     }
 };
 
-// Update post
+// update post by id
 const updatePost = async (req, res) => {
     try {
         if (!req.body || Object.keys(req.body).length === 0) {
@@ -67,7 +67,7 @@ const updatePost = async (req, res) => {
     }
 };
 
-// Delete post
+// delete post by id
 const deletePost = async (req, res) => {
     try {
         const deleted = await Post.findByIdAndDelete(req.params.id);

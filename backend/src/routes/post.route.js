@@ -3,13 +3,13 @@ import { createPost, deletePost, getPosts, updatePost } from "../controllers/pos
 
 const router = Router();
 
-// Tutorial specific routes
+// tutorial endpoints
 router.route("/create").post(createPost);
 router.route("/getPosts").get(getPosts);
 router.route("/update/:id").patch(updatePost);
 router.route("/delete/:id").delete(deletePost);
 
-// RESTful standard aliases
+// restful aliases
 router.route("/").post(createPost);
 router.route("/").get(getPosts);
 router.route("/:id").patch(updatePost);
