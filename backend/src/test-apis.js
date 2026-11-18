@@ -1,3 +1,4 @@
+import "dotenv/config";
 import connectDB from "./config/database.js";
 import app from "./app.js";
 import mongoose from "mongoose";
